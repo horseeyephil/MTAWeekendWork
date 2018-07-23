@@ -31,51 +31,66 @@ const colorPicker = {
 export default function MTA(props) {
 
     const scale = props.flyerWidth || 600
+
+    const bubbleRegex = /\$bubble(@?\S*)/
+
   return (
     <div style = {{fontFamily: `"Helvetica", Helvetica, sans-serif`, 
-                  width: scale, backgroundColor: 'white', flex: '0 1' //, minHeight: scale*1.09,
+                  width: scale //, minHeight: scale*1.09,
     }}>
       {/* <div style={{color: 'white', backgroundColor: 'black', height: scale/6, fontSize: scale/17, paddingTop: 12, paddingLeft: scale*.045,
         fontWeight: 520, letterSpacing: -2
       }}>
         Planned Work
       </div> */}
-      <div style = {{height: scale*.27, backgroundColor: '#c4c4c4', fontSize: scale*.09, fontWeight: 800, paddingTop: scale*.02,  position: 'relative',
-      letterSpacing: -2.5,
-      }}>
-        <span style={{marginLeft: scale*.045}}>{props.template.topHeader}</span>
+      <div style = {{height: scale*.27, backgroundColor: '#c4c4c4', paddingTop: scale*.02,  position: 'relative', fontWeight: 800,}}>
+        <span style={{marginLeft: scale*.045, fontSize: scale*.085, letterSpacing: -1.5,}}>{props.template.topHeader}</span>
         <div style={{display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: scale*.18, color: 'white',
         position: 'absolute', right: scale*.025, height: scale*.25
     }}>
 
 
-           <div style = {{height: scale*.23, width: scale*.23, borderRadius: scale*.23, backgroundColor: (props.template.colorSpecs && props.template.colorSpecs[0]) || colorPicker[props.template.colorSpecs[0]] || '#ef9bb7',   
+           <div style = {{height: scale*.24, width: scale*.24, borderRadius: scale*.24, backgroundColor: (props.template.colorSpecs && props.template.colorSpecs[0]) || colorPicker[props.template.colorSpecs[0]] || '#ef9bb7',   
             display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: scale*.01
             }}>{props.template.routeBubbles[0]}</div>
             { props.template.routeBubbles[1] &&
-            <div style = {{height: scale*.23, width: scale*.23, borderRadius: scale*.23, backgroundColor: (props.template.colorSpecs && props.template.colorSpecs[1]) || colorPicker[props.template.routeBubbles[1]] || '#ef9bb7',  
+            <div style = {{height: scale*.24, width: scale*.24, borderRadius: scale*.24, backgroundColor: (props.template.colorSpecs && props.template.colorSpecs[1]) || colorPicker[props.template.routeBubbles[1]] || '#ef9bb7',  
             display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>{props.template.routeBubbles[1]}</div>}
 
         </div>
-        <div style={{fontSize: scale*.045, fontWeight: 550, letterSpacing: -1, position: 'absolute', bottom: scale*.02, marginLeft: scale*.045,}}>
+        <div style={{fontSize: scale*.05, fontWeight: 550, letterSpacing: -1, position: 'absolute', bottom: scale*.02, marginLeft: scale*.045,}}>
             
             <div >{props.template.subDate[0]}</div>
             <div >{props.template.subDate[1]}</div>
         </div>
       </div>
       
-      <div style={{backgroundColor: 'white', minHeight: scale*.82}}>
-        <div style={{fontSize: scale*.04, fontWeight: 500, letterSpacing: -1, paddingTop: scale*.01, paddingRight: scale*.045, marginLeft: scale*.045, marginBottom: scale*.055}}
+      <div style={{backgroundColor: 'white', minHeight: scale*.82, paddingBottom: scale*.045}}>
+        <div style={{fontSize: scale*.04, fontWeight: 540, letterSpacing: -.5, paddingTop: scale*.01, paddingRight: scale*.045, marginLeft: scale*.045, marginBottom: scale*.05}}
         >{props.template.capsHeader}</div>
         <hr style={{ width: scale*.92, height: scale*.004, border:'none', backgroundColor: 'black', margin: 'auto'}}></hr>
-        <div style={{fontSize: scale*.04, fontWeight: 600, letterSpacing: -0.5, marginTop: scale*.01, marginLeft: scale*.045, paddingRight: scale*.045, marginBottom: scale*.055}}
-        >{props.template.infoHeader}</div>
+        
+        {props.template.infoHeader.map(each=>(
+        <div>
+        <div style={{fontSize: scale*.04, fontWeight: 600, letterSpacing: -0.5, marginTop: scale*.01, marginLeft: scale*.045, paddingRight: scale*.045, marginBottom: scale*.05}}
+        >{each}</div>
         <hr style={{ width: scale * .92, height: scale*.0015, border:'none', backgroundColor: 'black', margin: 'auto'}}></hr>
-        <ul style={{listStylePosition: 'outside', fontSize: scale*0.038, marginTop: scale*.01, marginLeft: 0, paddingLeft: scale*0.045, paddingRight: scale*.045}}>
-            {props.template.bulletin.map(each=>(
-                <li style={{marginBottom: scale*.045}}>{each}</li>
+        </div>
+        ))}
+        
+        
+        <ul style={{listStylePosition: 'outside', fontSize: scale*0.038, marginTop: scale*.01, marginLeft: 0, paddingLeft: scale*0.045, paddingRight: scale*.045, lineHeight: 1.4}}>
+            {props.template.bulletin.map(eachSentence => (
+                <li style={{marginBottom: scale*.04}}>{eachSentence.split(bubbleRegex).map(each=>(
+                    
+                    each[0]!=='@' ? <span>{each}</span>
+                    :
+                    <div style={{ color: 'white', fontSize: scale*.038,  display: 'inline-flex', alignItems:'center', justifyContent: 'center',
+                        marginLeft: 4, marginRight: 4, width: scale*.06, height:scale*.06, borderRadius: scale*.06, backgroundColor: each.slice(2)}}>{each[1]}</div>
+                ))}</li>
             ))}
+            
         </ul>
       </div>
     </div>
