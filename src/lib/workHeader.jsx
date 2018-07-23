@@ -26,17 +26,17 @@ export default function (props){
                 <div style={{paddingLeft: scale*.02,}}>Late Nights</div>
             </div>
             <div style={{display: 'flex',  fontSize: scale*.015}}>
-                <div style={{width: scale*.25, }}>
-                    <div style={{fontWeight: 600, paddingTop:scale*.0048,}}>Key</div>
-                    <div style={{marginTop: scale*.008}}>big block of text filling all this up!</div>
-                    <div style={{marginTop: scale*.008}}>big block of text filling all this up!</div>
+                <div style={{width: scale*.24, paddingLeft: scale*0.0105 }}>
+                    <div style={{fontWeight: 600, paddingTop:scale*.0048, }}>Key</div>
+                    <div style={{marginTop: scale*.008, }}>big block of text filling all this up!</div>
+                    <div style={{marginTop: scale*.008, }}>big block of text filling all this up!</div>
                 </div>
-                <div style={{width: scale*.25}}>
+                <div style={{width: scale*.24, paddingLeft: scale*0.0105, paddingRight: scale*0.005}}>
                     <div style={{height: scale*.072, paddingTop:scale*.0048,}}>
                     <div style={{fontWeight: 700}}>Where I go</div>
                     <div style={{marginTop: scale*.008}}>Where I go I wanna write a lot of text to break lines over and over three</div>
                     </div>
-                    <hr style={{margin: 0, width: scale*.25, height: scale*.001, border: 'none', backgroundColor: 'black', marginBottom: scale*.003}}></hr>
+                    <hr style={{margin: 0, width: scale*.24, height: scale*.001, border: 'none', backgroundColor: 'black', marginBottom: scale*.003}}></hr>
                     <div style={{fontWeight: 700,}}>Where I go</div>
                     <div style={{marginTop: scale*.008}}>Where I go</div>
                 </div>
