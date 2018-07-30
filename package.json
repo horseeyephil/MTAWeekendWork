@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description":
     "A React Component for an MTA inspired card theme you can supply with text!",
-  "main": "lib/index.js",
+  "main": "lib/plannedWork.js",
   "scripts": {
     "dev": "concurrently \"npm run lib:watch\" \"npm run docs\"",
     "lib": "babel src/lib -d lib --copy-files",

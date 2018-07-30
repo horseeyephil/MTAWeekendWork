@@ -5,10 +5,10 @@ export default function (props){
 
     return (
         <div style={{
-            width: scale, fontFamily: `"Helvetica", Helvetica, sans-serif`, 
+            width: scale, fontFamily: `"Helvetica Neue", Helvetica, sans-serif`, 
         }}>
          <div style={{
-            height: scale*.17, backgroundColor: 'black', color: 'white', fontSize: scale*.108, fontWeight: 540,
+            height: scale*.17, backgroundColor: 'black', color: 'white', fontSize: scale*.102, fontWeight: 540,
             paddingLeft: scale*.02, letterSpacing: -3.5,
         }}> Weekend Work
         </div>
@@ -19,13 +19,13 @@ export default function (props){
         <div style={{
             height: scale*.15, backgroundColor: 'white', color: 'black', display: 'flex'
         }}>
-            <div style={{width: scale*.5, paddingTop:scale*.005, fontSize: scale*.038, fontWeight: 500, letterSpacing: -1.5, 
+            <div style={{width: scale*.5, paddingTop:scale*.005, fontSize: scale*.032, fontWeight: 500, letterSpacing: -1.5, 
                 
             }}>
                 <div style={{paddingLeft: scale*.02,}}>Lilac I wish you well</div>
                 <div style={{paddingLeft: scale*.02,}}>Late Nights</div>
             </div>
-            <div style={{display: 'flex',  fontSize: scale*.015}}>
+            <div style={{display: 'flex',  fontSize: scale*.011}}>
                 <div style={{width: scale*.24, paddingLeft: scale*0.0105 }}>
                     <div style={{fontWeight: 600, paddingTop:scale*.0048, }}>Key</div>
                     <div style={{marginTop: scale*.008, }}>big block of text filling all this up!</div>
