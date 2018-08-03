@@ -3,6 +3,5 @@ src
 .babelrc
 webpack.config.js
 MTACard.png
-lib/plannedWork.js
 lib/poster.js
 lib/workHeader.js
