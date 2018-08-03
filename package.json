@@ -1,6 +1,6 @@
 {
   "name": "plannedworktheme",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A React Component for an MTA inspired card theme you can supply with text!",
   "main": "lib/index.js",
   "scripts": {
