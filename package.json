@@ -1,8 +1,7 @@
 {
   "name": "plannedworktheme",
-  "version": "0.1.0",
-  "description":
-    "A React Component for an MTA inspired card theme you can supply with text!",
+  "version": "0.1.1",
+  "description": "A React Component for an MTA inspired card theme you can supply with text!",
   "main": "lib/index.js",
   "scripts": {
     "dev": "concurrently \"npm run lib:watch\" \"npm run docs\"",
@@ -11,7 +10,16 @@
     "docs": "webpack-dev-server --mode development",
     "docs:prod": "webpack --mode production"
   },
-  "keywords": ["template","card","design","UI","subway","Helvetica","css","colors"],
+  "keywords": [
+    "template",
+    "card",
+    "design",
+    "UI",
+    "subway",
+    "Helvetica",
+    "css",
+    "colors"
+  ],
   "license": "MIT",
   "peerDependencies": {
     "react": "^15.3.0 || ^16.2.0",
