@@ -19,11 +19,19 @@ const template1 = {
 
 }
 
+const header1 = {
+  head: 'Planned Work',
+  footerText: ['Scalable font', 'This is an added feature: now there is an optional header and footer combo!', 'Pass an object as a plannedWork prop to the component! It takes a these keys: {head, footerText, footerScale, fontScale}. Those last three should be arrays.'],
+  footerScale: [1, 2, 1],
+  fontScale: [2.8, 2, 1]
+
+}
 
 
 
 
-render(<MTA template={template1} flyerWidth={580}/>, document.getElementById("app"));
+
+render(<MTA template={template1} plannedWork={header1} flyerWidth={580}/>, document.getElementById("app"));
 
 
 

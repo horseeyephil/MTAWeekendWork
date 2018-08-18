@@ -45,12 +45,15 @@ export default function MTA(props) {
 
     const bubbleRegex = /\{bubble(@?\S*)\}/
 
+    const {footerScale, fontScale} = props.plannedWork 
+    
+
   return (
     <div style = {{fontFamily: `"Helvetica Neue", Helvetica, sans-serif`, width: scale }}>
 
-      { props.plannedWork && <div style={{color: 'white', backgroundColor: 'black', height: scale*.167, fontSize: scale*.06, paddingTop: scale*.02, paddingLeft: scale*.045,
+      { props.plannedWork && <div style={{color: 'white', backgroundColor: 'black', height: scale*.13, fontSize: scale*.05, paddingTop: scale*.02, paddingLeft: scale*.045,
         fontWeight: 520, letterSpacing: -2
-      }}>Planned Work
+      }}>{props.plannedWork.head}
       </div> }
 
       <div style = {{height: scale*.27, backgroundColor: '#c4c4c4', paddingTop: scale*.02,  position: 'relative', fontWeight: 800,}}>
@@ -116,6 +119,17 @@ export default function MTA(props) {
             
         </ul>
       </div>
+      {props.plannedWork && (
+      <div>
+        <div style={{ backgroundColor:'#c4c4c4', height: scale*.12, paddingLeft: scale*.045}}>
+          {props.plannedWork.footerText.map((eachText, idx)=>(
+            <div style={{display: 'inline-block', width: scale*.22*(footerScale && footerScale[idx] || 1), marginTop: scale*.003, marginRight: scale*.015,
+            fontSize: scale*.013* (fontScale && fontScale[idx] || 1 ), fontWeight: 600, verticalAlign: 'top'}}
+            >{eachText}</div>))
+          }
+        </div>
+        <div style={{ backgroundColor:'black', height: scale*.02}}></div>
+      </div>)}
     </div>
   );
 }
